@@ -1,6 +1,11 @@
 from flask import Flask, render_template
+from flask_restful import Api
+
+from api import Cdr
 
 app = Flask(__name__, static_folder='client/static/assets')
+api = Api(app)
+api.add_resource(Cdr, '/cdr')
 
 @app.route("/")
 def home():

@@ -15,10 +15,12 @@ This project must also be containerized, with details for how to start and use i
 ## Technologies
 This project uses the following technologies:
 - Flask (Python) - backend
+  - flask-restful for REST API package
 - Vue (JavaScript) - frontend
+  - Axios package for making API calls
+  - Vite for packaging
 
 TODO:
-- Get Vue all set up
 - Create a view that will allow users to upload a file
 - Parse the file into usable data and save that data
 - Create a view that will display the data
