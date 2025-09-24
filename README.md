@@ -23,6 +23,11 @@ This project uses the following technologies:
 TODO:
 - Create a view that will allow users to upload a file
 - Parse the file into usable data and save that data
+- Save the parsed data to a DB
 - Create a view that will display the data
 - Set up the project to be containerized and easily started
 - Write tests!
+- Add validation to data, sanitize and prevent SQL injection/other attacks
+
+IMPROVEMENTS:
+- Make process async
