@@ -2,10 +2,12 @@ from flask import request
 from flask_restful import Resource
 
 from constants import EXTENDED_STRING_ENDING, HEX_STRING_ENDING
+
+from db import add_cdr
 from utils import parse_extended_string, parse_hex_string, parse_basic_string
 
 
-class Cdr(Resource):
+class CdrController(Resource):
     def post(self):
         """
         Allows the user to upload CDR (Call Data Record) files to the database
@@ -24,4 +26,6 @@ class Cdr(Resource):
                 parsed_object = parse_hex_string(data)
             else:
                 parsed_object = parse_basic_string(data)
+
+            add_cdr(**parsed_object)
 
