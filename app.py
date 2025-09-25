@@ -3,7 +3,7 @@ import os
 from flask import Flask, render_template
 from flask_restful import Api
 
-from api import CdrController
+from hologram_project.api import CdrController
 
 app = Flask(__name__, static_folder='client/static/assets')
 

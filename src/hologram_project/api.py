@@ -1,10 +1,9 @@
 from flask import request
 from flask_restful import Resource
 
-from constants import EXTENDED_STRING_ENDING, HEX_STRING_ENDING
-
-from db import bulk_add_cdr, get_all_cdrs
-from utils import parse_extended_string, parse_hex_string, parse_basic_string
+from hologram_project.constants import EXTENDED_STRING_ENDING, HEX_STRING_ENDING
+from hologram_project.db import bulk_add_cdr, get_all_cdrs
+from hologram_project.utils import parse_extended_string, parse_hex_string, parse_basic_string
 
 
 class CdrController(Resource):
