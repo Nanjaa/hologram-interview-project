@@ -9,9 +9,9 @@ def get_collection():
     db = client.get_database("hologramProjectDB")
     return db.get_collection("cdrs")
 
-def add_cdr(id, bytes_used, dmcc=None, mnc=None, cellid=None, ip=None):
+def bulk_add_cdr(cdr_array):
     """
-    Inserts a cdr into the cdr collection, with the following fields:
+    Inserts an arry of cdrs into the cdr collection, with the following fields:
 
     - "id"
     - "bytes_used"
@@ -21,14 +21,5 @@ def add_cdr(id, bytes_used, dmcc=None, mnc=None, cellid=None, ip=None):
     - "cellid"
     - "ip"
     """
-    cdr_doc = {
-            'id': id,
-            'bytes_used': bytes_used,
-            'dmcc': dmcc,
-            'mnc': mnc,
-            'cellid': cellid,
-            'ip': ip
-        }
-
     cdrs = get_collection()
-    return cdrs.insert_one(cdr_doc)
+    return cdrs.insert_many(cdr_array)

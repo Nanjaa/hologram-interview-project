@@ -17,7 +17,7 @@ def parse_basic_string(data):
             'id': int(data[0]),
             'bytes_used': int(data[1])
         }
-        return return_data
+        return format_data(**return_data)
     except (IndexError, ValueError):
         raise ValueError(exception_message(data))
 
@@ -41,7 +41,7 @@ def parse_extended_string(data):
             'bytes_used': int(data[3]),
             'cellid': int(data[4]),
         }
-        return return_data
+        return format_data(**return_data)
     except (IndexError, ValueError):
         raise ValueError(exception_message(data))
 
@@ -77,6 +77,17 @@ def parse_hex_string(data):
             'cellid': cellid,
             'ip': ip,
         }
-        return return_data
+        return format_data(**return_data)
     except (IndexError, ValueError):
         raise ValueError(exception_message(data))
+
+def format_data(id, bytes_used, dmcc=None, mnc=None, cellid=None, ip=None):
+    """Ensures that all data is properly formatted for upload to database"""
+    return {
+        'id': id,
+        'bytes_used': bytes_used,
+        'dmcc': dmcc,
+        'mnc': mnc,
+        'cellid': cellid,
+        'ip': ip
+    }

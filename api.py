@@ -3,7 +3,7 @@ from flask_restful import Resource
 
 from constants import EXTENDED_STRING_ENDING, HEX_STRING_ENDING
 
-from db import add_cdr
+from db import bulk_add_cdr
 from utils import parse_extended_string, parse_hex_string, parse_basic_string
 
 
@@ -16,6 +16,7 @@ class CdrController(Resource):
         """
         file = request.files['file']
         file_content = file.read()
+        objects_to_upload = []
 
         for line in file_content.decode('utf-8').split('\n'):
             data = line.split(',')
@@ -27,5 +28,6 @@ class CdrController(Resource):
             else:
                 parsed_object = parse_basic_string(data)
 
-            add_cdr(**parsed_object)
+            objects_to_upload.append(parsed_object)
 
+        bulk_add_cdr(objects_to_upload)

@@ -36,4 +36,3 @@ IMPROVEMENTS:
 - More friendly UI - single page? Keep multiple pages?
 - Swagger-style API UX
 - Future milestone: editing/updating records, more details about what happens if you save an existing record, etc
-- bulk add cdrs
