@@ -1,9 +1,9 @@
 import "./assets/main.css";
 import { createApp } from "vue";
-import Home from "./Home.vue";
-import Upload from "./Upload.vue";
-import List from "./List.vue";
+import PrimeVue from 'primevue/config';
+import App from './App.vue'
 
-createApp(Home).mount('#home');
-createApp(Upload).mount('#upload');
-createApp(List).mount('#list');
+const app = createApp(App);
+app.use(PrimeVue);
+
+app.mount('#app');

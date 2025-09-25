@@ -19,20 +19,23 @@ This project uses the following technologies:
   - flask-restful for REST API package
 - Vue (JavaScript) - frontend
   - Axios package for making API calls
-  - Vite for packaging
+  - Vite for compiling
+  - PrimeVue for UI Suite
 - MongoDB for noSQL database
   - flask-pymongo for database driver
 
-TODO:
-- Save the parsed data to a DB
+## TODO:
 - Create a view that will display the data
 - Set up the project to be containerized and easily started
 - Write tests!
 - Add validation to data, sanitize and prevent SQL injection/other attacks
 - Add custom exception handling for smoother errors
+- Tidy everything up, remove console logs etc
 
-IMPROVEMENTS:
+## IMPROVEMENTS AND PROPOSED FUTURE MILESTONES:
 - Make process async
-- More friendly UI - single page? Keep multiple pages?
 - Swagger-style API UX
 - Future milestone: editing/updating records, more details about what happens if you save an existing record, etc
+- Restrict what data loads to the current user
+- Add pagination to CDR table
+- Configure a linter to properly format the code and make everything ~pretty~

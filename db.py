@@ -23,3 +23,7 @@ def bulk_add_cdr(cdr_array):
     """
     cdrs = get_collection()
     return cdrs.insert_many(cdr_array)
+
+def get_all_cdrs():
+    cdrs = get_collection()
+    return cdrs.find({})

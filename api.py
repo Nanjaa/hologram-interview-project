@@ -3,7 +3,7 @@ from flask_restful import Resource
 
 from constants import EXTENDED_STRING_ENDING, HEX_STRING_ENDING
 
-from db import bulk_add_cdr
+from db import bulk_add_cdr, get_all_cdrs
 from utils import parse_extended_string, parse_hex_string, parse_basic_string
 
 
@@ -31,3 +31,12 @@ class CdrController(Resource):
             objects_to_upload.append(parsed_object)
 
         bulk_add_cdr(objects_to_upload)
+
+    def get(self):
+        """
+        Returns a list of CDR objects from the database
+
+        :return:
+        """
+        cdrs = get_all_cdrs()
+        return list(cdrs)
