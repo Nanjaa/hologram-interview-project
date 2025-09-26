@@ -7,8 +7,7 @@ import axios from 'axios';
 const cdrs = ref();
 
 onMounted(() => {
-  console.log('this is a test')
-  axios.get('/cdr').then((data) => (cdrs.value = data))
+  axios.get('/cdr').then((response) => (cdrs.value = response['data']))
 });
 
 function uploadFile(event) {

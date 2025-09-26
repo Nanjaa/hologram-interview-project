@@ -1,4 +1,5 @@
-from flask import request
+from bson import json_util
+from flask import request, jsonify
 from flask_restful import Resource
 
 from hologram_project.constants import EXTENDED_STRING_ENDING, HEX_STRING_ENDING
@@ -37,5 +38,10 @@ class CdrController(Resource):
 
         :return:
         """
-        cdrs = get_all_cdrs()
-        return list(cdrs)
+        cdrs = list(get_all_cdrs())
+        # cdrs_test = [
+        #     {'id': item.get('id', None), } for item in cdrs
+        # ]
+
+        return jsonify(cdrs)
+        # return json_util.dumps(cdrs[0])

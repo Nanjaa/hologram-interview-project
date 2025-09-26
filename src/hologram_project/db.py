@@ -1,5 +1,5 @@
 from flask import current_app, g
-from flask_pymongo import MongoClient
+from flask_pymongo import MongoClient, PyMongo
 
 def get_client():
     return MongoClient(current_app.config['MONGO_URI'])
@@ -26,4 +26,4 @@ def bulk_add_cdr(cdr_array):
 
 def get_all_cdrs():
     cdrs = get_collection()
-    return cdrs.find({})
+    return cdrs.find({}, {'_id': 0})
