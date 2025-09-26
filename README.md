@@ -25,7 +25,6 @@ This project uses the following technologies:
   - flask-pymongo for database driver
 
 ## TODO:
-- Create a view that will display the data
 - Set up the project to be containerized and easily started
 - Write tests!
 - Add validation to data, sanitize and prevent SQL injection/other attacks
@@ -39,3 +38,4 @@ This project uses the following technologies:
 - Restrict what data loads to the current user
 - Add pagination to CDR table
 - Configure a linter to properly format the code and make everything ~pretty~
+- There is a latency problem with the fetch all query

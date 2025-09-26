@@ -1,4 +1,3 @@
-from bson import json_util
 from flask import request, jsonify
 from flask_restful import Resource
 
@@ -39,9 +38,4 @@ class CdrController(Resource):
         :return:
         """
         cdrs = list(get_all_cdrs())
-        # cdrs_test = [
-        #     {'id': item.get('id', None), } for item in cdrs
-        # ]
-
         return jsonify(cdrs)
-        # return json_util.dumps(cdrs[0])
