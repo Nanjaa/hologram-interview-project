@@ -1,3 +1,5 @@
+from hologram_project.exceptions import InvalidFormatException
+
 def exception_message(data):
     # TODO: create a proper exception class and raise that instead
     return f'The following data has not been properly formatted: {''.join(data)}'
@@ -19,7 +21,7 @@ def parse_basic_string(data):
         }
         return format_data(**return_data)
     except (IndexError, ValueError):
-        raise ValueError(exception_message(data))
+        raise InvalidFormatException(exception_message(data))
 
 def parse_extended_string(data):
     """
@@ -43,7 +45,7 @@ def parse_extended_string(data):
         }
         return format_data(**return_data)
     except (IndexError, ValueError):
-        raise ValueError(exception_message(data))
+        raise InvalidFormatException(exception_message(data))
 
 def parse_hex_string(data):
     """
@@ -79,7 +81,7 @@ def parse_hex_string(data):
         }
         return format_data(**return_data)
     except (IndexError, ValueError):
-        raise ValueError(exception_message(data))
+        raise InvalidFormatException(exception_message(data))
 
 def format_data(id, bytes_used, dmcc=None, mnc=None, cellid=None, ip=None):
     """Ensures that all data is properly formatted for upload to database"""

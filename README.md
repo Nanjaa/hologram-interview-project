@@ -27,9 +27,7 @@ This project uses the following technologies:
 ## TODO:
 - Set up the project to be containerized and easily started
 - Write tests!
-- Add validation to data, sanitize and prevent SQL injection/other attacks
 - Add custom exception handling for smoother errors
-- Tidy everything up, remove console logs etc
 
 ## IMPROVEMENTS AND PROPOSED FUTURE MILESTONES:
 - Make process async
@@ -39,3 +37,4 @@ This project uses the following technologies:
 - Add pagination to CDR table
 - Configure a linter to properly format the code and make everything ~pretty~
 - There is a latency problem with the fetch all query
+- Add validation to data, sanitize and prevent SQL injection/other attacks

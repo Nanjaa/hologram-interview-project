@@ -52,13 +52,13 @@ function uploadFile(event) {
     </div>
     <div>
       <h2>Entries</h2>
-      <DataTable :value="cdrs" tableStyle="min-width: 50rem">
-          <Column field="id" header="ID"></Column>
+      <DataTable :value="cdrs" stripedRows showGridlines paginator :rows="25" tableStyle="min-width: 50rem">
+          <Column field="id" sortable header="ID"></Column>
           <Column field="mnc" header="MNC"></Column>
-          <Column field="bytes_used" header="Bytes Used"></Column>
+          <Column field="bytes_used" sortable header="Bytes Used"></Column>
           <Column field="dmcc" header="DMCC"></Column>
-          <Column field="cellid" header="Cell ID"></Column>
-          <Column field="ip" header="IP"></Column>
+          <Column field="cellid" sortable header="Cell ID"></Column>
+          <Column field="ip" sortable header="IP"></Column>
       </DataTable>
     </div>
   </div>
