@@ -12,6 +12,9 @@ Display the parsed and normalized records in a table
 
 This project must also be containerized, with details for how to start and use it.
 
+## To start:
+Run `docker compose up --build` from the main directory and go to http://127.0.0.1:5001/
+
 ## Technologies
 This project uses the following technologies:
 - Poetry - package management
@@ -23,11 +26,10 @@ This project uses the following technologies:
   - PrimeVue for UI Suite
 - MongoDB for noSQL database
   - flask-pymongo for database driver
+- Docker for containerization
 
 ## TODO:
 - Set up the project to be containerized and easily started
-- Write tests!
-- Add custom exception handling for smoother errors
 
 ## IMPROVEMENTS AND PROPOSED FUTURE MILESTONES:
 - Make process async
@@ -38,3 +40,4 @@ This project uses the following technologies:
 - Configure a linter to properly format the code and make everything ~pretty~
 - There is a latency problem with the fetch all query
 - Add validation to data, sanitize and prevent SQL injection/other attacks
+- More tests!! Always more tests. FE tests desperately needed.

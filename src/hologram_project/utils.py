@@ -1,8 +1,7 @@
 from hologram_project.exceptions import InvalidFormatException
 
 def exception_message(data):
-    # TODO: create a proper exception class and raise that instead
-    return f'The following data has not been properly formatted: {''.join(data)}'
+    return f'The following data has not been properly formatted: {"".join(data)}'
 
 def parse_basic_string(data):
     """
