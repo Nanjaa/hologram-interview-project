@@ -26,7 +26,7 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy built frontend files into backend's static directory
-COPY --from=frontend-builder /app/client/static ./static
+COPY --from=frontend-builder /app/client/static/assets ./client/static/assets
 
 # Set environment variables
 ENV FLASK_APP=app:app

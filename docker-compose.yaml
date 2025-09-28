@@ -3,3 +3,5 @@ services:
     build: .
     ports:
       - "5001:5000"
+    environment:
+      MONGO_URI: "mongodb+srv://stephforcier:<PASSWORD-HERE>@stephanie-forcier-holog.aukiuu6.mongodb.net/?retryWrites=true&w=majority&appName=stephanie-forcier-hologram-project"
